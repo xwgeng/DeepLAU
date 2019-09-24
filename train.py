@@ -53,7 +53,7 @@ parser.add_argument('--tied_emb', action='store_true', help='tied output project
 # optimization
 parser.add_argument('--optim', type=str, default='Adam', help='optimization algorihtim')
 parser.add_argument('--batch_size', type=int, default=128, help='input batch size for training')
-parser.add_argument('--lr', type=float, default=0.0005, help='learning rate')
+parser.add_argument('--lr', type=float, default=0.005, help='learning rate')
 parser.add_argument('--l2', type=float, default=0, help='L2 regularization')
 parser.add_argument('--grad_clip', type=float, default=1, help='gradient clipping')
 parser.add_argument('--decay_lr', action='store_true', help='decay learning rate')
