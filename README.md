@@ -21,10 +21,11 @@ Training the DeepLAU model on Chinese-English translation datasets as follows:
 python train.py \
 --src_vocab /path/to/cn.voc3.pkl --trg_vocab /path/to/en.voc3.pkl \
 --train_src corpus/train.cn-en.cn --train_trg corpus/train.cn-en.en \
+--src_max_len 50 --trg_max_len 50 \
 --valid_src corpus/nist02/nist02.cn \
 --valid_trg corpus/nist02/nist02.en0 corpus/nist02/nist02.en1 corpus/nist02/nist02.en2 corpus/nist02/nist02.en3 \
 --eval_script scripts/validate.sh \
---model RNNSearch \
+--model LAUModel \
 --optim Adam \
 --batch_size 128 \
 --half_epoch \
