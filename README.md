@@ -16,7 +16,7 @@ python scripts/buildvocab.py --corpus /path/to/train.en --output /path/to/en.voc
 ```
 
 ### Training
-Training the RNNSearch on Chinese-English translation datasets as follows:
+Training the DeepLAU model on Chinese-English translation datasets as follows:
 ```
 python train.py \
 --src_vocab /path/to/cn.voc3.pkl --trg_vocab /path/to/en.voc3.pkl \
@@ -29,7 +29,7 @@ python train.py \
 --batch_size 128 \
 --half_epoch \
 --cuda \
---info RMSprop-half_epoch 
+--info Adam-half_epoch 
 ```
 ### Evaluation
 ```
@@ -38,8 +38,8 @@ python translate.py \
 --test_src corpus/nist03/nist03.cn \
 --test_trg corpus/nist03/nist02.en0 corpus/nist03/nist03.en1 corpus/nist03/nist03.en2 corpus/nist03/nist03.en3 \
 --eval_script scripts/validate.sh \
---model RNNSearch \
---name RNNSearch.best.pt \
+--model LAUModel \
+--name LAUModel.best.pt \
 --cuda 
 ```
 The evaluation metric for Chinese-English we use is case-insensitive BLEU. We use the `muti-bleu.perl` script from [Moses](https://github.com/moses-smt/mosesdecoder) to compute the BLEU:
